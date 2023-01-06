@@ -56,3 +56,6 @@ facilitating the addition of new pages, controllers, repositories and etc.</p>
 
 # Usage
 <p>To use the project, clone the repository and run the flutter run command in the root of the project. Make sure you have Flutter installed on your machine.</p>
+
+![MacBook Pro 16_ - 1](https://user-images.githubusercontent.com/54601019/211058174-00f5024e-ebe5-4969-a33f-1fe8927f1c62.png)
+
