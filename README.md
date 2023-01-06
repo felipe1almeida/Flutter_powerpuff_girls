@@ -54,6 +54,35 @@ The possibility of maintaining a simple architecture, but well organized, withou
 Navigation by named routes and injection/inversion of dependency in a simple way, isolating each component in a different class, 
 facilitating the addition of new pages, controllers, repositories and etc.</p>
 
+# Tests
+
+**TvShowController**:   
+This test is important because it ensures that the formatShowInfo method is working correctly and returning the expected output for a given set of input values.
+
+
+**TvShowRepository**:
+This test is for the TV show repository in the Flutter application. The test case is checking the behavior of the endpoints of the repository when making HTTP requests to the TV Maze API. There are three test cases in this group:
+
+The first test case is checking that the repository can make a successful request to the TV Maze API and receive a response in the expected format. It is checking that the name field of the response data is equal to 'The Powerpuff Girls'.
+
+The third test case is checking that the repository can correctly retrieve a list of episodes for a TV show. It is making a request for a TV show with a valid ID and checking that the length of the list of episodes in the response data is equal to 78.
+
+These test cases are important because they ensure that the TV show repository is working correctly and making the expected HTTP requests to the TV Maze API.
+
+
+
+
+**Shared function**:
+
+The test case is checking the behavior of the formatDate function in two different scenarios:
+
+The first test case is calling the formatDate function with a valid date string and a format string and checking that the returned value is the expected formatted date string.
+
+The second test case is calling the formatDate function with an invalid date string and a format string and using the throwsFormatException function from the flutter_test library to check that the function throws a FormatException error.
+
+These test cases are important because they ensure that the formatDate function is working correctly and handling both valid and invalid input values correctly.
+
+
 # Usage
 <p>To use the project, clone the repository and run the flutter run command in the root of the project. Make sure you have Flutter installed on your machine.</p>
 
