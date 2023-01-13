@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
 
 import '../models/tv_show_episodes_model.dart';
@@ -15,8 +13,7 @@ class TvShowRepository {
       final response = await _dio.get('/shows/$id');
 
       return TvShowModel.fromJson(response.data);
-    } on DioError catch (e, s) {
-      log(e.message, error: e, stackTrace: s);
+    } on Exception {
       throw Exception();
     }
   }
@@ -32,8 +29,7 @@ class TvShowRepository {
       );
 
       return tvData;
-    } on DioError catch (e, s) {
-      log(e.message, error: e, stackTrace: s);
+    } on Exception {
       throw Exception();
     }
   }

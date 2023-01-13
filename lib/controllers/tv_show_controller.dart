@@ -13,6 +13,8 @@ class TvShowController extends GetxController {
 
   TvShowController({required TvShowRepository tvShowRepository}) : _tvShowRepository = tvShowRepository;
 
+  get getEpisodes => _getEpisodes();
+
   Future<TvShowModel> getTvShow() async {
     final response = await _tvShowRepository.getTvShowDetails(apiShowId);
     _getEpisodes();

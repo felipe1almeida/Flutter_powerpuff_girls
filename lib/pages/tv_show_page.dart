@@ -53,6 +53,7 @@ class TvShowPage extends GetView<TvShowController> {
                               letterSpacing: 2.0,
                               color: colorYellow,
                             ),
+                            key: const ValueKey('show_name'),
                           ),
                           const SizedBox(height: 8),
                           SizedBox(
@@ -65,6 +66,7 @@ class TvShowPage extends GetView<TvShowController> {
                                 style: const TextStyle(
                                   color: colorSecondary,
                                 ),
+                                key: const ValueKey('show_summary'),
                               ),
                             ),
                           ),
@@ -78,6 +80,7 @@ class TvShowPage extends GetView<TvShowController> {
                                 status: snapshot.data!.status ?? 'N/A',
                                 rating: snapshot.data!.rating?.average ?? 0.0,
                               ),
+                              key: const ValueKey('show_info'),
                             ),
                           ),
                           const SizedBox(height: 20),

@@ -65,7 +65,7 @@ void main() {
     });
 
     testWidgets(
-        'Should render a text widget and validate that matches the text style [ Fontsize 18, color: colorPrimary, FontWeight.w600 ',
+        'Should render a text widget Synopsis and validate that matches the text style [ Fontsize 18, color: colorPrimary, FontWeight.w600 ',
         (tester) async {
       await tester.pumpWidget(buildWidgets(const EpisodeDetailsSynopsis(summary: 'summary')));
 
