@@ -30,14 +30,22 @@ class TvShowController extends GetxController {
 
   String formatShowInfo(
       {required String? premiere, required String? ended, required String? status, required double? rating}) {
-    if (premiere != 'N/A') {
-      premiere = formatDate(date: premiere!, format: 'yyyy');
+    premiere ??= 'N/A';
+    ended ??= 'N/A';
+    status ??= 'N/A';
+    rating ??= 0.0;
+
+    if (premiere != 'N/A' && premiere.isNotEmpty) {
+      premiere = formatDate(date: premiere, format: 'yyyy');
     }
-    if (ended != 'N/A') {
-      ended = formatDate(date: ended!, format: 'yyyy');
+    if (ended != 'N/A' && ended.isNotEmpty) {
+      ended = formatDate(date: ended, format: 'yyyy');
     }
-    if (status != 'N/A') {
-      status = status!;
+    if (status != 'N/A' && status.isNotEmpty) {
+      status = status;
+    }
+    if (premiere.isEmpty && ended.isEmpty && status.isEmpty) {
+      return 'N/A - N/A | N/A |  Rating: 0.0';
     }
 
     return '$premiere - $ended | $status |  Rating: $rating';
