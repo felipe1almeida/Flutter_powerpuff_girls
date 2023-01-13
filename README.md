@@ -30,12 +30,12 @@ main.dart: The entry point of the Flutter application
 # Dependencies
 The project depends on the following external libraries:
 
-**dio**: Communication with the rest api
-**get**: State management, dependency injection, route management
-**transparent_image**: A simple transparent image
-**google_fonts**: Use an external font globally in the application
-**intl**: formatting and parsing dates
-**styled_text**: makes it easy to format tags, example <b> inside a string with different styles
+**[dio](https://pub.dev/packages/dio)**: Communication with the rest api<br>
+**[get](https://pub.dev/packages/get)**: State management, dependency injection, route management<br>
+**[transparent_image](https://pub.dev/packages/transparent_image)**: A simple transparent image<br>
+**[google_fonts](https://pub.dev/packages/google_fonts)**: Use an external font globally in the application<br>
+**[intl](https://pub.dev/packages/intl)**: formatting and parsing dates<br>
+**[styled_text](https://pub.dev/packages/styled_text)**: makes it easy to format tags, example <b> inside a string with different styles<br>
 
 
 <p>The application consists of two screens, the first of which contains general information about the show and a list of episodes. All data on this screen is obtained from an HTTP request to an API, which is initially called through the use of the FutureBuilder widget. This widget calls a function in the page's controller, which has an instance of a repository that makes the request. While the data is being loaded, a circular progress indicator is displayed in the center of the screen. When there is a response from the API with data, the screen is updated through reactivity, where the FutureBuilder is wrapped in an Obx, which updates the state of the screen and displays the show's information. After this request, the same controller makes a request to the second endpoint, which retrieves the list of series episodes, and updates the ListView component with all existing episodes.</p>
@@ -56,35 +56,49 @@ facilitating the addition of new pages, controllers, repositories and etc.</p>
 
 # Tests
 
-**TvShowController**:   
-This test is important because it ensures that the formatShowInfo method is working correctly and returning the expected output for a given set of input values.
+#### The tests are divided into 2 layers, unit tests and widget tests
 
+## **Test/UI** <br>
+Root of widget tests <br>
+## **Test/UI/components** <br>
+which are the components that were externalized from the code, to facilitate code reading, maintenance and reusability.<br>
+## **Test/UI/pages**<br>
+These are the tests of widgets on the pages, excluding components that have been externalized, which in turn may or may not call functions of other classes, such as obtaining a list of episodes
 
-**TvShowRepository**:
-This test is for the TV show repository in the Flutter application. The test case is checking the behavior of the endpoints of the repository when making HTTP requests to the TV Maze API. There are three test cases in this group:
+## How to run the tests
+In the root of the project, run the command
 
-The first test case is checking that the repository can make a successful request to the TV Maze API and receive a response in the expected format. It is checking that the name field of the response data is equal to 'The Powerpuff Girls'.
+> sh flutter_run_test.sh
 
-The third test case is checking that the repository can correctly retrieve a list of episodes for a TV show. It is making a request for a TV show with a valid ID and checking that the length of the list of episodes in the response data is equal to 78.
+Or
 
-These test cases are important because they ensure that the TV show repository is working correctly and making the expected HTTP requests to the TV Maze API.
-
-
-
-
-**Shared function**:
-
-The test case is checking the behavior of the formatDate function in two different scenarios:
-
-The first test case is calling the formatDate function with a valid date string and a format string and checking that the returned value is the expected formatted date string.
-
-The second test case is calling the formatDate function with an invalid date string and a format string and using the throwsFormatException function from the flutter_test library to check that the function throws a FormatException error.
-
-These test cases are important because they ensure that the formatDate function is working correctly and handling both valid and invalid input values correctly.
-
+> flutter test
 
 # Usage
-<p>To use the project, clone the repository and run the flutter run command in the root of the project. Make sure you have Flutter installed on your machine.</p>
+<p>To use the project, clone the repository and run the flutter run command in the root of the project. <br>
+In the root of the project, run the command</p>
+<p>
+To validate if you have the necessary requirements to run the project use the command
+
+> flutter doctor
+
+</p>
+
+have a device connected by usb, over the network or emulator/simulator, android/ios
+
+Use the command in the root of the project
+
+> sh flutter_run_test.sh
+
+<br>
+
+or 
+
+> flutter run
+
+<br>
+
+This command should install all necessary dependencies for the project to work properly and launch the app
 
 ![MacBook Pro 16_ - 1](https://user-images.githubusercontent.com/54601019/211058174-00f5024e-ebe5-4969-a33f-1fe8927f1c62.png)
 
