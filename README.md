@@ -65,6 +65,8 @@ which are the components that were externalized from the code, to facilitate cod
 ## **Test/UI/pages**<br>
 These are the tests of widgets on the pages, excluding components that have been externalized, which in turn may or may not call functions of other classes, such as obtaining a list of episodes
 
+## **Test/Unit_test**<br>
+these are the unit tests of the application, covering the part of controllers, repositories and shared functions
 ## How to run the tests
 In the root of the project, run the command
 
