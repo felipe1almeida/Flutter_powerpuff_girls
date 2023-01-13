@@ -14,6 +14,7 @@ class TvShowDetailsPage extends GetView<TvShowDetailsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
             Stack(
